@@ -1,0 +1,10 @@
+transaction_id,user_id,amount,timestamp,merchant_category,device_type,hour_of_day,day_of_week,txn_count_last_24h,user_avg_amount,amount_deviation,amount_velocity,baseline_type,anomaly_score,risk_level_raw,risk_level,risk_reason,user_confirmed
+T1,U1,250,2024-03-01 10:15:00,food,mobile,10,4,1,0.0,0.0,0.0,GLOBAL,0.19387500045266992,LOW,LOW,Normal behavior,SKIP
+T2,U1,180,2024-03-01 18:40:00,transport,mobile,18,4,2,250.0,0.72,0.0,GLOBAL,0.47645182412985776,MEDIUM,MEDIUM,Normal behavior,SKIP
+T3,U1,12000,2024-03-02 02:30:00,electronics,web,2,5,3,215.0,55.81395348837209,0.0,GLOBAL,1.0,HIGH,HIGH,"Amount is 55.81× higher than your GLOBAL baseline (₹215.0 avg); Transaction occurred at 2:00, outside usual hours",COOLDOWN_SKIP
+T97,U1,40000,2024-03-03 01:30:00,luxury,web,1,6,2,4143.333333333333,9.654062751407885,8.65,GLOBAL,0.8242258743004774,HIGH,HIGH,"Amount is 9.65× higher than your GLOBAL baseline (₹4143.33 avg); Transaction occurred at 1:00, outside usual hours",COOLDOWN_SKIP
+T999,U1,50000,2024-03-03 02:00:00,luxury,web,2,6,3,13107.5,3.8146099561319855,1.87,GLOBAL,0.060628691317826555,LOW,HIGH,"Amount is 3.81× higher than your GLOBAL baseline (₹13107.5 avg); Transaction occurred at 2:00, outside usual hours",COOLDOWN_SKIP
+T98,U1,60000,2024-03-03 02:00:00,luxury,web,2,6,4,20486.0,2.928829444498682,0.76,GLOBAL,0.0,LOW,LOW,"Amount is 2.93× higher than your GLOBAL baseline (₹20486.0 avg); Transaction occurred at 2:00, outside usual hours",SKIP
+T5,U1,150000,2024-03-03 03:30:00,luxury,web,3,6,4,27071.666666666668,5.540848365449732,2.0,GLOBAL,0.4586580960657871,MEDIUM,MEDIUM,"Amount is 5.54× higher than your GLOBAL baseline (₹27071.67 avg); Transaction occurred at 3:00, outside usual hours",SKIP
+T99,U1,150000,2024-03-03 03:30:00,luxury,web,3,6,5,44632.857142857145,3.3607528086291327,0.73,GLOBAL,0.49857728441206317,MEDIUM,MEDIUM,"Amount is 3.36× higher than your GLOBAL baseline (₹44632.86 avg); Transaction occurred at 3:00, outside usual hours",SKIP
+T4,U2,900,2024-03-01 09:20:00,food,mobile,9,4,1,0.0,0.0,0.0,GLOBAL,0.27348891228511585,LOW,LOW,Normal behavior,SKIP

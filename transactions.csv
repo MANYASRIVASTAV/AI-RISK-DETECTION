@@ -1,0 +1,4 @@
+transaction_id,user_id,amount,timestamp,merchant_category,device_type
+S1,U1,250,2024-03-01 10:15:00,food,mobile
+S2,U1,180,2024-03-01 18:40:00,transport,mobile
+S3,U2,900,2024-03-01 09:20:00,food,mobile

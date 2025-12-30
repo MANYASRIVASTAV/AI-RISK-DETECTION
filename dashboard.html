@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RiskGuard | Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- TOP NAVBAR -->
+<header class="top-nav">
+  <div class="nav-left">
+    🔐 <span class="logo">RiskGuard</span>
+  </div>
+
+  <nav class="nav-center">
+    <button onclick="goSim()">💸 Pay</button>
+    <button onclick="goDash()">📊 Dashboard</button>
+  </nav>
+
+  <div class="nav-right">
+    <span class="user-badge" id="navUser"></span>
+    <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+  </div>
+</header>
+
+<!-- DASHBOARD CONTENT -->
+<main class="dashboard-page">
+
+  <h2 class="page-title">📊 Risk Dashboard</h2>
+
+  <section class="dashboard">
+
+    <div class="stat">
+      <h3>Total Transactions</h3>
+      <span id="totalTxns">—</span>
+    </div>
+
+    <div class="stat">
+      <h3>High Risk Alerts</h3>
+      <span id="highRisk">—</span>
+    </div>
+
+    <div class="stat">
+      <h3>Last Alert</h3>
+      <span id="lastAlert">—</span>
+    </div>
+
+  </section>
+
+  <button class="back-btn" onclick="goSim()">⬅ Back to Simulator</button>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

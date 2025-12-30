@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RiskGuard | Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- TOP NAVBAR -->
+<header class="top-nav">
+  <div class="nav-left">
+    🔐 <span class="logo">RiskGuard</span>
+  </div>
+
+  <nav class="nav-center">
+    <button onclick="goSim()">💸 Pay</button>
+    <button onclick="goDash()">📊 Dashboard</button>
+  </nav>
+
+  <div class="nav-right">
+    <span class="user-badge" id="navUser"></span>
+    <button class="logout-btn" onclick="logout()">🚪 Logout</button>
+  </div>
+</header>
+
+<!-- MAIN GRID -->
+<div class="layout">
+
+  <!-- LEFT PANEL -->
+  <aside class="side-panel">
+    <h3>🧠 Risk Signals</h3>
+    <ul>
+      <li>Unusual amount vs baseline</li>
+      <li>Rapid spending velocity</li>
+      <li>Late night activity</li>
+      <li>Cold start handling</li>
+    </ul>
+
+    <h3>⚙ System Mode</h3>
+    <p>Soft controls enabled</p>
+    <p>No hard blocks</p>
+  </aside>
+
+  <!-- CENTER PHONE -->
+  <main class="center-panel">
+    <div class="phone">
+      <div class="screen">
+
+        <div class="banner LOW" id="systemState">
+          🟢 Normal Monitoring
+        </div>
+
+        <div class="status-bar">
+          ⏰ <span id="clock"></span>
+        </div>
+
+        <h3>Send Money</h3>
+
+        <label>Amount (₹)</label>
+        <input id="amount" type="number">
+
+        <label>Merchant</label>
+        <select id="merchant">
+          <option>Food</option>
+          <option>Electronics</option>
+          <option>Hospital</option>
+          <option>Luxury</option>
+        </select>
+
+        <label>Device</label>
+        <select id="device">
+          <option>Mobile</option>
+          <option>Web</option>
+        </select>
+
+        <button onclick="submitTxn()">Send Money</button>
+
+        <div id="riskSheet" class="risk-sheet hidden">
+          <h4>⚠ Risk Detected</h4>
+          <p id="riskReason"></p>
+          <button onclick="confirmTxn()">Yes, this is me</button>
+        </div>
+
+        <div class="history">
+          <h4>Recent Activity</h4>
+          <ul id="txnHistory"></ul>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- RIGHT PANEL -->
+  <aside class="side-panel">
+    <h3>📊 Live Risk Info</h3>
+    <p><b>User:</b> <span id="liveUser"></span></p>
+    <p><b>Baseline:</b> GLOBAL</p>
+    <p><b>Risk Level:</b> <span id="liveRisk">LOW</span></p>
+
+    <h3>📝 Explanation</h3>
+    <p id="liveExplain">No anomaly detected.</p>
+  </aside>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
