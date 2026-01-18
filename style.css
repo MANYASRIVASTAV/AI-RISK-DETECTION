@@ -1,244 +1,873 @@
-/* =========================
-   RESET + BASE
-========================= */
-* {
-  box-sizing: border-box;
+
+body.center{
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #eaf3ff, #f6f9ff);
+  display: grid;
+  place-items: center;
+  color: #0f172a;
 }
 
-body {
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  background: radial-gradient(circle at top, #020617, #000);
+.card{
+  width: 380px;
+  padding: 42px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid #e6edf7;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 22px 60px rgba(2,6,23,0.08);
+  text-align: center;
+}
+
+.card h1{
+  font-size: 30px;
+  font-weight: 1000;
+  color: #0f172a;
+  text-shadow: none;
+}
+
+.subtitle{
+  margin-top: 10px;
+  font-size: 13px;
+  color: #64748b;
+  opacity: 1;
+}
+
+.card input{
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 18px;
+  border-radius: 16px;
+  border: 1px solid #e6edf7;
+  outline: none;
+  background: #f7fbff;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.card input:focus{
+  border-color: rgba(37,99,235,0.45);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.14);
+}
+
+.card button{
+  width: 100%;
+  padding: 12px 14px;
+  margin-top: 14px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 1000;
+  cursor: pointer;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
   color: white;
+  box-shadow: 0 16px 30px rgba(37,99,235,0.20);
+  transition: 0.25s ease;
+}
+
+.card button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(37,99,235,0.28);
+}
+
+.disclaimer{
+  margin-top: 16px;
+  font-size: 12px;
+  color: #64748b;
+  opacity: 1;
+}
+
+
+
+
+
+
+/* =========================
+   FINTECH DASHBOARD (CLASSY)
+========================= */
+
+/* Only apply on app pages */
+.page-app {
+  background: #f6f9ff;
+  color: #0f172a;
+  display: block;
+}
+
+/* Layout */
+.page-app .app-wrap {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.page-app .sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e6edf7;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.page-app .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid #e6edf7;
+  background: linear-gradient(180deg, #ffffff, #f3f8ff);
+}
+
+.page-app .brand-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 16px 30px rgba(37,99,235,0.22);
+}
+
+.page-app .brand-title {
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+
+.page-app .brand-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Sidebar buttons */
+.page-app .side-btn {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #e6edf7;
+  background: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+  text-align: left;
+}
+
+.page-app .side-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2,6,23,0.08);
+}
+
+.page-app .side-btn.active {
+  border: none;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 18px 40px rgba(37,99,235,0.20);
+}
+
+/* BIG LOGOUT LEFT */
+.page-app .logout-left {
+  margin-top: auto;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  box-shadow: 0 14px 30px rgba(239,68,68,0.22);
+  transition: 0.25s ease;
+}
+
+.page-app .logout-left:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(239,68,68,0.28);
+}
+
+/* Main content */
+.page-app .main-area {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Navbar (clean) */
+.page-app .top-nav {
+  height: 64px;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e6edf7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.page-app .logo {
+  font-weight: 900;
+}
+
+/* Navbar buttons */
+.page-app .top-nav button {
+  width: auto;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid #e6edf7;
+  background: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.page-app .top-nav button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2,6,23,0.08);
+}
+
+/* Dashboard page */
+.page-app .dashboard-page {
+  padding: 22px;
+}
+
+.page-app .page-title {
+  font-size: 28px;
+  font-weight: 1000;
+}
+
+/* Cards grid */
+.page-app .dashboard {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.page-app .stat {
+  background: #ffffff;
+  border: 1px solid #e6edf7;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+  transition: 0.25s ease;
+}
+
+.page-app .stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 46px rgba(2,6,23,0.10);
+}
+
+.page-app .stat h3 {
+  font-size: 13px;
+  font-weight: 900;
+  color: #64748b;
+}
+
+.page-app .stat span {
+  display: block;
+  margin-top: 10px;
+  font-size: 34px;
+  font-weight: 1000;
+  color: #0f172a;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .page-app .app-wrap {
+    grid-template-columns: 1fr;
+  }
+  .page-app .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
+   FINTECH DASHBOARD (SAFE)
+========================= */
+
+.page-app {
+  background: #f6f9ff;
+  color: #0f172a;
+  min-height: 100vh;
+  display: block;
+}
+
+/* Layout */
+.page-app .app-wrap {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.page-app .sidebar {
+  background: #ffffff;
+  border-right: 1px solid #e6edf7;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.page-app .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid #e6edf7;
+  background: linear-gradient(180deg, #ffffff, #f3f8ff);
+}
+
+.page-app .brand-logo {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 16px 30px rgba(37, 99, 235, 0.22);
+}
+
+.page-app .brand-title {
+  font-weight: 900;
+}
+
+.page-app .brand-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.page-app .side-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page-app .side-btn {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid #e6edf7;
+  background: white;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.25s ease;
+}
+
+.page-app .side-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.08);
+}
+
+.page-app .side-btn.active {
+  border: none;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 18px 40px rgba(37, 99, 235, 0.20);
+}
+
+/* Big logout left */
+.page-app .logout-left {
+  margin-top: auto;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 900;
+  color: white;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  box-shadow: 0 14px 30px rgba(239, 68, 68, 0.22);
+  transition: 0.25s ease;
+}
+
+.page-app .logout-left:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(239, 68, 68, 0.28);
+}
+
+/* Main area */
+.page-app .main-area {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top navbar clean */
+.page-app .top-nav {
+  height: 64px;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #e6edf7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.page-app .nav-center {
+  display: flex;
+  gap: 10px;
+}
+
+.page-app .top-nav button {
+  width: auto;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid #e6edf7;
+  background: white;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.page-app .top-nav button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(2, 6, 23, 0.08);
+}
+
+/* Logout (top) */
+.page-app .logout-btn {
+  border: none !important;
+  color: white !important;
+  background: linear-gradient(135deg, #ef4444, #b91c1c) !important;
+}
+
+/* Dashboard content */
+.page-app .dashboard-page {
+  padding: 22px;
+}
+
+.page-app .page-title {
+  font-size: 28px;
+  font-weight: 1000;
+}
+
+/* Stats grid */
+.page-app .dashboard {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.page-app .stat {
+  background: #ffffff;
+  border: 1px solid #e6edf7;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 16px 34px rgba(2, 6, 23, 0.06);
+  transition: 0.25s ease;
+}
+
+.page-app .stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 46px rgba(2, 6, 23, 0.10);
+}
+
+.page-app .stat h3 {
+  font-size: 13px;
+  font-weight: 900;
+  color: #64748b;
+}
+
+.page-app .stat span {
+  display: block;
+  margin-top: 10px;
+  font-size: 34px;
+  font-weight: 1000;
+}
+
+/* Back button */
+.page-app .back-btn {
+  margin-top: 18px;
+  width: auto;
+  padding: 12px 16px;
+  border-radius: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .page-app .app-wrap {
+    grid-template-columns: 1fr;
+  }
+
+  .page-app .sidebar {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .page-app .side-menu {
+    flex-direction: row;
+  }
+
+  .page-app .logout-left {
+    width: auto;
+    margin-top: 0;
+  }
+
+  .page-app .dashboard {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================
-   TOP NAVBAR
+   SIMULATOR PAGE (FINTECH PREMIUM)
+   Backend-safe (IDs unchanged)
 ========================= */
-.top-nav {
-  height: 60px;
-  background: #020617;
+
+.page-app{
+  background: #f6f9ff;
+  color: #0f172a;
+  min-height: 100vh;
+  display: block;
+}
+
+/* Navbar already handled in dashboard css, but keep it consistent */
+.page-app .top-nav{
+  background: rgba(255,255,255,0.88);
+  border-bottom: 1px solid #e6edf7;
+}
+
+/* Main layout */
+.page-app .layout{
+  display: grid;
+  grid-template-columns: 360px 1fr 360px;
+  gap: 18px;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Panels */
+.page-app .side-panel{
+  background: #ffffff;
+  border: 1px solid #e6edf7;
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 16px 34px rgba(2,6,23,0.06);
+}
+
+.page-app .side-panel h3{
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 1000;
+  color: #0f172a;
+}
+
+.page-app .side-panel ul{
+  margin-left: 18px;
+  color: #475569;
+  line-height: 1.7;
+  font-size: 13px;
+}
+
+/* Center phone area */
+.page-app .center-panel{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Phone mock -> fintech card style */
+.page-app .phone{
+  width: 420px;
+  border-radius: 22px;
+  background: #ffffff;
+  border: 1px solid #e6edf7;
+  box-shadow: 0 20px 60px rgba(2,6,23,0.10);
+  overflow: hidden;
+}
+
+.page-app .screen{
+  padding: 18px;
+}
+
+/* Banner states */
+.page-app .banner{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
-  border-bottom: 1px solid #1f2937;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-left,
-.nav-center,
-.nav-right {
-  display: flex;
-  align-items: center;
-}
-
-.logo {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-/* CENTER MENU */
-.nav-center {
-  gap: 16px;
-}
-
-/* NAVBAR BUTTONS (OVERRIDE GLOBAL BUTTON) */
-.top-nav button {
-  width: auto;
-  padding: 8px 14px;
-  border-radius: 10px;
-  font-size: 14px;
-  font-weight: 600;
-  background: transparent;
-  border: 1px solid #1f2937;
-  color: #cbd5f5;
-  cursor: pointer;
-}
-
-.top-nav button:hover {
-  background: #2563eb;
-  color: white;
-}
-
-/* LOGOUT */
-.logout-btn {
-  background: #2563eb !important;
-  border: none !important;
-  color: white !important;
-}
-
-/* USER BADGE */
-.user-badge {
-  margin-right: 12px;
+  font-weight: 900;
   font-size: 13px;
-  color: #94a3b8;
-}
-
-/* =========================
-   MAIN GRID (SIMULATOR)
-========================= */
-.layout {
-  display: grid;
-  grid-template-columns: 1fr 420px 1fr;
-  gap: 24px;
-  padding: 24px;
-}
-
-/* =========================
-   SIDE PANELS
-========================= */
-.side-panel {
-  background: #020617;
+  padding: 12px 14px;
   border-radius: 16px;
-  padding: 18px;
-  min-height: 620px;
-  border: 1px solid #1f2937;
+  border: 1px solid #e6edf7;
 }
 
-.side-panel h3 {
-  margin-top: 0;
-  color: #60a5fa;
+.page-app .LOW{
+  background: linear-gradient(180deg, #ffffff, #ecfdf5);
+  color: #166534;
 }
 
-/* =========================
-   CENTER PANEL
-========================= */
-.center-panel {
-  display: flex;
-  justify-content: center;
+.page-app .HIGH{
+  background: linear-gradient(180deg, #ffffff, #fff1f2);
+  color: #991b1b;
 }
 
-/* =========================
-   PHONE MOCKUP
-========================= */
-.phone {
-  width: 360px;
-  background: #020617;
-  border-radius: 32px;
-  box-shadow: 0 0 50px rgba(0,0,0,0.7);
-  padding-top: 24px;
-}
-
-.screen {
-  padding: 16px;
-}
-
-/* =========================
-   BANNER
-========================= */
-.banner {
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 12px;
-  font-weight: bold;
-}
-
-.LOW {
-  background: #064e3b;
-  box-shadow: 0 0 10px #10b981;
-}
-
-.HIGH {
-  background: #7f1d1d;
-  box-shadow: 0 0 12px #ef4444;
-}
-
-/* =========================
-   STATUS BAR
-========================= */
-.status-bar {
-  text-align: center;
+/* Clock */
+.page-app .status-bar{
+  margin-top: 10px;
   font-size: 12px;
-  opacity: 0.7;
+  color: #64748b;
+  opacity: 1;
+  text-align: left;
+}
+
+/* Form headings */
+.page-app h3{
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: 1000;
+}
+
+/* Labels */
+.page-app label{
+  display: block;
+  margin-top: 14px;
+  font-size: 13px;
+  font-weight: 900;
+  color: #334155;
+}
+
+/* Inputs */
+.page-app input,
+.page-app select{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: 1px solid #e6edf7;
+  background: #f7fbff;
+  outline: none;
+  margin-top: 8px;
+  font-weight: 700;
+}
+
+.page-app input:focus,
+.page-app select:focus{
+  border-color: rgba(37,99,235,0.45);
+  box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+}
+
+/* Buttons */
+.page-app button{
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  font-weight: 1000;
+  margin-top: 12px;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 16px 30px rgba(37,99,235,0.18);
+  transition: 0.25s ease;
+}
+
+.page-app button:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(37,99,235,0.25);
+}
+
+/* Risk Sheet */
+.page-app .risk-sheet{
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: 18px;
+  border: 1px solid rgba(239,68,68,0.25);
+  background: linear-gradient(180deg, #ffffff, #fff1f2);
+}
+
+.page-app .risk-sheet h4{
+  font-weight: 1000;
+  margin-bottom: 6px;
+  color: #991b1b;
+}
+
+.page-app #riskReason{
+  color: #475569;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* Confirm button inside risk */
+.page-app .risk-sheet button{
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  box-shadow: 0 14px 28px rgba(239,68,68,0.20);
+}
+
+/* History */
+.page-app .history{
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e6edf7;
+}
+
+.page-app .history h4{
+  font-weight: 1000;
+  font-size: 14px;
   margin-bottom: 8px;
 }
 
-/* =========================
-   FORMS
-========================= */
-input,
-select,
-button {
-  width: 100%;
-  padding: 10px;
-  margin-top: 8px;
-  border-radius: 8px;
-  border: none;
-}
-
-button {
-  background: #2563eb;
-  color: white;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-button:hover {
-  background: #1d4ed8;
-}
-
-/* =========================
-   HISTORY
-========================= */
-.history ul {
-  padding-left: 16px;
+.page-app .history ul{
+  padding-left: 18px;
+  color: #475569;
+  line-height: 1.7;
   font-size: 13px;
 }
 
+/* Hidden utility */
+.hidden{
+  display: none !important;
+}
+
+/* Responsive */
+@media (max-width: 1200px){
+  .page-app .layout{
+    grid-template-columns: 1fr;
+  }
+  .page-app .phone{
+    width: min(520px, 100%);
+  }
+}
+
+
 /* =========================
-   RISK SHEET
+   NAVBAR UPGRADE + TOGGLE
 ========================= */
-.risk-sheet {
-  background: #020617;
-  border: 1px solid #7f1d1d;
-  padding: 12px;
-  border-radius: 12px;
-  margin-top: 12px;
+
+.page-app .top-nav{
+  height: 72px;
+  padding: 0 22px;
+  border-radius: 18px;
+  margin: 14px 18px 0 18px;
+  box-shadow: 0 18px 50px rgba(2,6,23,0.08);
 }
 
-.hidden {
-  display: none;
+.page-app .nav-left{
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* =========================
-   DASHBOARD PAGE
-========================= */
-.dashboard-page {
-  padding: 32px;
+.page-app .brand-icon{
+  font-size: 20px;
 }
 
-.page-title {
-  margin-bottom: 24px;
+.page-app .logo{
+  font-size: 22px;        /* ✅ Bigger RiskGuard */
+  font-weight: 1000;
+  letter-spacing: 0.4px;
 }
 
-.dashboard {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+.page-app .brand-tag{
+  font-size: 12px;
+  font-weight: 800;
+  color: #64748b;
+  background: #f3f8ff;
+  border: 1px solid #e6edf7;
+  padding: 6px 10px;
+  border-radius: 999px;
 }
 
-.stat {
-  background: #020617;
-  border: 1px solid #1f2937;
-  border-radius: 16px;
-  padding: 20px;
-  text-align: center;
+.page-app .nav-center{
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.stat span {
-  display: block;
-  margin-top: 8px;
-  font-size: 22px;
-  font-weight: bold;
+.page-app .nav-btn{
+  padding: 10px 16px !important;
+  border-radius: 999px !important;
+  border: 1px solid #e6edf7 !important;
+  background: white !important;
+  font-weight: 900 !important;
+  color: #0f172a !important;
 }
 
-.back-btn {
-  margin-top: 30px;
-  width: auto;
-  padding: 10px 18px;
+.page-app .nav-btn:hover{
+  background: linear-gradient(135deg, #2563eb, #06b6d4) !important;
+  color: white !important;
+  border: none !important;
+  box-shadow: 0 18px 40px rgba(37,99,235,0.22) !important;
+}
+
+/* Toggle Wrap */
+.page-app .toggle-wrap{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #e6edf7;
+  background: #ffffff;
+}
+
+.page-app .toggle-text{
+  font-size: 12px;
+  font-weight: 900;
+  color: #475569;
+}
+
+/* Toggle Switch */
+.page-app .switch{
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+}
+
+.page-app .switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.page-app .slider{
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background: #cbd5e1;
+  transition: 0.25s;
+  border-radius: 999px;
+}
+
+.page-app .slider:before{
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background: white;
+  transition: 0.25s;
+  border-radius: 999px;
+  box-shadow: 0 8px 16px rgba(2,6,23,0.15);
+}
+
+.page-app .switch input:checked + .slider{
+  background: linear-gradient(135deg, #22c55e, #06b6d4);
+}
+
+.page-app .switch input:checked + .slider:before{
+  transform: translateX(20px);
+}
+
+/* Logout more premium */
+.page-app .logout-btn{
+  padding: 10px 16px !important;
+  border-radius: 999px !important;
+  font-weight: 1000 !important;
 }
