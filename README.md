@@ -2,7 +2,7 @@
 
 RiskGuard is a **behavior-based transaction risk prioritization system**
 that detects anomalous financial activity using machine learning and
-human-in-the-loop verification.
+human-in-the-loop verification
 
 > This is not a fraud-proof system.
 > It is a risk triage and decision-support layer.
